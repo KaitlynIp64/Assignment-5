@@ -18,10 +18,14 @@ if (navigator.serviceWorker) {
  */
 function myButtonClicked() {
   const number = parseInt(document.getElementById("number").value);
-  let sum = 0;
-  
-  for (let counter = 1; counter <= number; counter++) {
-    sum += counter;
-  }
-  document.getElementById("answer").innerHTML = "The answer is: " + sum;
+    let iterations = 400000;
+    let denominator = 1;
+    let multiplier = 1;
+    let pi = (4 / number);
+
+    for(let counter = 2; counter <= iterations; counter++)
+    {
+        pi += ( (4 / (denominator += 2)) * (multiplier *= -1) );
+    }
+  document.getElementById("answer").innerHTML = "The answer is: " + pi;
 }
