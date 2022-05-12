@@ -17,15 +17,25 @@ if (navigator.serviceWorker) {
  * Input
  */
 function myButtonClicked() {
-  const number = parseInt(document.getElementById("number").value);
-    let iterations = 400000;
-    let denominator = 1;
-    let multiplier = 1;
-    let pi = (4 / number);
+  var numChosen = parseInt(document.getElementById("numChosen").value);
+  var pi;
+  var num = 1;
+  var positiveOrNegative = "minus";
 
-    for(let counter = 2; counter <= iterations; counter++)
-    {
-        pi += ( (4 / (denominator += 2)) * (multiplier *= -1) );
+  pi = 4 / num;
+  while (numChosen > 1) {
+    if (positiveOrNegative == "minus") {
+      num = num + 2;
+      pi = pi - (4 / num);
+      positiveOrNegative = "plus";
+    } else if (positiveOrNegative == "plus") {
+      num = num + 2;
+      pi = pi + (4 / num)
+      positiveOrNegative = "minus";
     }
+    numChosen = numChosen - 1;
+  }
+  positiveOrNegative = "minus";
+  num = 1;
   document.getElementById("answer").innerHTML = "The answer is: " + pi;
 }

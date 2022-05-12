@@ -6,7 +6,7 @@
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="Kaitlyn Ip" />
     <meta name="theme-color" content="#FFFFFF" />
-    <title>Natural Number Looping</title>
+    <title>PI Looping</title>
     <link rel="canonical" href="https://https://kaitlynip64.github.io/Assignment-5/" />
     <link rel="manifest" href="/Assignment-5/manifest.webmanifest" />
     <link rel="stylesheet" href="./css/style.css" />
@@ -29,20 +29,23 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Natural Number Loops, with JS</span>
+          <span class="mdl-layout-title">Calculating PI using loop</span>
         </div>
       </header>
-      <main class="mdl-layout__content">      
-      Enter a natural number:
-      <form action="javascript:doMathClicked()">
-        <label for="counter1">Enter Integer: </label>
-        <input type="number" id="number" placeholder="ex: -2"><br><br>
-      </form>
+      <main class="mdl-layout__content">
+        <h6>The computer will then calculate the value of PI using the formula below.</h6>
+        <h6>Formula: π = 4/1 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11... </h6>
+        Enter a positive number
+        <input type="number" id="numChosen" name="numChosen" value="1" min="1" oninput="validity.valid||(value='');">
+        <br><br>
         <!-- Raised button with ripple -->
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick= "myButtonClicked()">
-              Identify
+              Calculate
             </button>
-    <p id="answer"></p>
+        <!-- basic text -->
+        <p></p>
+            <br>
+        <div id="answer"></div>
       </main>
     </div>
   </body>
